@@ -19,7 +19,7 @@ const App = () => {
       );
       const data = await response.json();
       setRecipes(data.hits);
-      // console.log(data.hits);
+      console.log(data.hits);
     };
     getRecipes();
   }, [query]);
@@ -48,7 +48,8 @@ const App = () => {
           calories={recipe.recipe.calories}
           servings={recipe.recipe.yield}
           image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredients} />
+          ingredients={recipe.recipe.ingredients}
+          url={recipe.recipe.url} />
       ))}
       </div>
     </div>
