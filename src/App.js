@@ -19,7 +19,7 @@ const App = () => {
       );
       const data = await response.json();
       setRecipes(data.hits);
-      console.log(data.hits);
+      console.log(data);
     };
     getRecipes();
   }, [query]);
@@ -49,7 +49,8 @@ const App = () => {
           servings={recipe.recipe.yield}
           image={recipe.recipe.image}
           ingredients={recipe.recipe.ingredients}
-          url={recipe.recipe.url} />
+          url={recipe.recipe.url}
+          dietLabels={recipe.recipe.dietLabels} />
       ))}
       </div>
     </div>
