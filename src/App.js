@@ -6,8 +6,10 @@ import { v4 as uuidv4 } from "uuid";
 import Recipe from "./Recipe";
 
 const App = () => {
-  const APP_ID = "2eb760d1";
-  const APP_KEY = "a5e7830e843687eca5146177932b4855";
+  // const APP_ID = "2eb760d1";
+  const APP_ID = `${process.env.REACT_APP_APP_ID}`;
+  // const APP_KEY = "a5e7830e843687eca5146177932b4855";
+  const APP_KEY = `${process.env.REACT_APP_API_KEY}`;
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
@@ -38,12 +40,7 @@ const App = () => {
   return (
     <div className="App">
       <form onSubmit={getSearch} className="search-form">
-        <input
-          className="search-bar"
-          type="text"
-          value={search}
-          onChange={updateSearch}
-        />
+        <input className="search-bar" type="text" value={search} onChange={updateSearch} />
         <button className="search-button" type="submit">
           Search
         </button>
