@@ -22,10 +22,10 @@ const App = () => {
       );
       const data = await response.json();
       setRecipes(data.hits);
-      console.log(data);
+      // console.log(data);
     };
     getRecipes();
-  }, [query]);
+  }, [query, APP_ID, APP_KEY]);
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
